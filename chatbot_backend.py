@@ -31,3 +31,6 @@ async def chat(request: ChatRequest):
     return {"response": response["choices"][0]["message"]["content"]}
 
 # Run with: uvicorn chatbot_backend:app --reload
+@app.get("/")
+def read_root():
+    return {"message": "Chatbot backend is running!"}
